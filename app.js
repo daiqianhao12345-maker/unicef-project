@@ -1,5 +1,3 @@
-// 避免使用关键字 "this"：全部使用 event.currentTarget 或显式变量
-
 const state = {
   hasDonated: false,
   selectedMessage: "",
@@ -7,24 +5,23 @@ const state = {
 };
 
 const encouragementMessages = [
-  "你已经很努力了，别怕，明天会更好。",
-  "你值得被爱，也值得拥有安全和快乐。",
-  "请相信自己，你的未来一定会发光。",
-  "每一步都算数，你正在变得更强大。",
-  "当你感到害怕时，世界上有人在为你加油。",
-  "你并不孤单，我们都在支持你。",
-  "愿你拥有健康、温暖和继续学习的机会。",
-  "你的笑容很珍贵，请一定要保护好自己。",
-  "今天辛苦了，给自己一个拥抱。",
-  "你会遇到很多善意，也会拥有很多可能。"
+  "You’ve already been so brave—don’t be afraid. Tomorrow can be better.",
+  "You deserve love, safety, and happiness.",
+  "Believe in yourself—your future will shine.",
+  "Every step counts. You are becoming stronger.",
+  "When you feel scared, someone in the world is cheering for you.",
+  "You are not alone. We are here for you.",
+  "Wishing you health, warmth, and the chance to keep learning.",
+  "Your smile is precious—please stay safe.",
+  "You worked hard today. Give yourself a hug.",
+  "You will meet kindness, and you will have many possibilities."
 ];
 
-function getEl(id){
-  const el = document.getElementById(id);
-  return el;
+function getEl(id) {
+  return document.getElementById(id);
 }
 
-function showToast(message){
+function showToast(message) {
   const toast = getEl("toast");
   const toastText = getEl("toastText");
 
@@ -41,7 +38,7 @@ function showToast(message){
   }, 2200);
 }
 
-function setStepActive(stepIndex){
+function setStepActive(stepIndex) {
   const step1 = getEl("step1");
   const step2 = getEl("step2");
   const step3 = getEl("step3");
@@ -55,7 +52,7 @@ function setStepActive(stepIndex){
   if (stepIndex === 3) step3.classList.add("step--active");
 }
 
-function unlockPicker(){
+function unlockPicker() {
   const gateLocked = getEl("gateLocked");
   const picker = getEl("picker");
   gateLocked.hidden = true;
@@ -63,7 +60,7 @@ function unlockPicker(){
   setStepActive(2);
 }
 
-function lockPicker(){
+function lockPicker() {
   const gateLocked = getEl("gateLocked");
   const picker = getEl("picker");
   gateLocked.hidden = false;
@@ -71,7 +68,7 @@ function lockPicker(){
   setStepActive(1);
 }
 
-function renderMessages(){
+function renderMessages() {
   const grid = getEl("messageGrid");
   grid.innerHTML = "";
 
@@ -91,7 +88,7 @@ function renderMessages(){
   });
 }
 
-function clearSelectedUi(){
+function clearSelectedUi() {
   const grid = getEl("messageGrid");
   const buttons = Array.from(grid.querySelectorAll("button.msgBtn"));
   buttons.forEach((btn) => btn.classList.remove("msgBtn--selected"));
@@ -107,7 +104,7 @@ function clearSelectedUi(){
   state.selectedMessage = "";
 }
 
-function selectMessage(buttonEl){
+function selectMessage(buttonEl) {
   const grid = getEl("messageGrid");
   const buttons = Array.from(grid.querySelectorAll("button.msgBtn"));
   buttons.forEach((btn) => btn.classList.remove("msgBtn--selected"));
@@ -126,31 +123,31 @@ function selectMessage(buttonEl){
   confirmBtn.disabled = messageText.length === 0;
 }
 
-function randomPick(){
+function randomPick() {
   const idx = Math.floor(Math.random() * encouragementMessages.length);
   const grid = getEl("messageGrid");
   const button = grid.querySelector(`button.msgBtn[data-index="${idx}"]`);
   if (button) selectMessage(button);
 }
 
-function goToDonateAndToast(){
-  // 回到“捐赠区”，并在“支付信息下方”弹出提示
+function goToDonateAndToast() {
+  // Jump back to the donation section and show a toast under the donation area
   window.location.hash = "#donate";
   setStepActive(3);
 
   const msg = state.selectedMessage
-    ? `你发送了鼓励：${state.selectedMessage}`
-    : "已完成操作";
+    ? `You sent: "${state.selectedMessage}"`
+    : "Action completed.";
 
   showToast(msg);
 
-  // 让步骤条过一会儿回到可继续选择状态
+  // After a moment, return the step indicator to the selectable state
   window.setTimeout(() => {
     if (state.hasDonated) setStepActive(2);
   }, 2600);
 }
 
-function init(){
+function init() {
   const btnScrollEncourage = getEl("btnScrollEncourage");
   const btnDonated = getEl("btnDonated");
   const btnCopyInfo = getEl("btnCopyInfo");
@@ -169,23 +166,23 @@ function init(){
   btnDonated.addEventListener("click", () => {
     state.hasDonated = true;
     unlockPicker();
-    showToast("已确认：你已完成捐赠（模拟）。现在可以选择一句鼓励语。");
+    showToast("Confirmed: you have donated (simulation). Now you can choose a message.");
     window.location.hash = "#message";
   });
 
   btnCopyInfo.addEventListener("click", async () => {
     const linkText = donationLink.textContent || "";
-    try{
+    try {
       await navigator.clipboard.writeText(linkText.trim());
-      showToast("已复制捐赠链接（示例）");
-    }catch(err){
-      showToast("复制失败：你的浏览器可能不允许剪贴板操作");
+      showToast("Donation link copied.");
+    } catch (err) {
+      showToast("Copy failed: your browser may block clipboard access.");
     }
   });
 
   btnRandomMessage.addEventListener("click", () => {
     if (!state.hasDonated) {
-      showToast("请先完成捐赠确认，再选择鼓励语。");
+      showToast("Please confirm your donation first, then choose a message.");
       return;
     }
     randomPick();
@@ -193,11 +190,11 @@ function init(){
 
   btnConfirmMessage.addEventListener("click", () => {
     if (!state.hasDonated) {
-      showToast("请先完成捐赠确认。");
+      showToast("Please confirm your donation first.");
       return;
     }
     if (!state.selectedMessage) {
-      showToast("请先选择一句鼓励语。");
+      showToast("Please select a message first.");
       return;
     }
     goToDonateAndToast();
@@ -207,7 +204,7 @@ function init(){
     state.hasDonated = false;
     clearSelectedUi();
     lockPicker();
-    showToast("已重置流程：请重新确认捐赠。");
+    showToast("Reset complete. Please confirm donation again.");
     window.location.hash = "#donate";
   });
 }
