@@ -1,170 +1,170 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>支持联合国儿童基金会 | UNICEF</title>
+  <title>Support UNICEF | Every Child Deserves a Future</title>
 
-  <!-- 样式 -->
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-  <!-- 背景装饰层 -->
+  <!-- Background decoration -->
   <div class="bgDecor" aria-hidden="true">
     <div class="blob blob--1"></div>
     <div class="blob blob--2"></div>
     <div class="gridGlow"></div>
   </div>
 
-  <!-- 顶部导航 -->
+  <!-- Top navigation -->
   <header class="topbar">
     <div class="container topbar__inner">
       <div class="brand">
         <div>
-          <div class="brand__title">UNICEF 联合国儿童基金会</div>
+          <div class="brand__title">UNICEF</div>
           <div class="brand__subtitle">Every child deserves a future</div>
         </div>
       </div>
 
       <nav class="nav">
-        <a class="nav__link" href="#about">关于</a>
-        <a class="nav__link" href="#donate">捐赠</a>
-        <a class="nav__link" href="#message">鼓励</a>
+        <a class="nav__link" href="#about">About</a>
+        <a class="nav__link" href="#donate">Donate</a>
+        <a class="nav__link" href="#message">Encouragement</a>
       </nav>
     </div>
   </header>
 
-  <!-- 主体内容 -->
+  <!-- Main content -->
   <main class="container page">
 
     <!-- HERO -->
     <section class="hero" id="about">
       <div class="hero__left">
-        <h1>让每一个孩子<br>拥有安全、健康与希望</h1>
+        <h1>Every child deserves<br>a safe, healthy, and hopeful future</h1>
 
         <p class="lead">
-          联合国儿童基金会（UNICEF）致力于在全球范围内保护儿童权利，
-          提供医疗、教育、清洁饮水以及紧急人道援助。
-          你的每一份支持，都可能改变一个孩子的一生。
+          UNICEF works around the world to protect children’s rights by providing
+          healthcare, education, clean water, and emergency humanitarian aid.
+          Every contribution has the potential to change a child’s life.
         </p>
 
         <div class="pillRow">
-          <span class="pill">🩺 医疗与疫苗</span>
-          <span class="pill">📚 教育支持</span>
-          <span class="pill">🚰 清洁饮水</span>
-          <span class="pill">🧸 儿童保护</span>
+          <span class="pill">🩺 Health & Vaccines</span>
+          <span class="pill">📚 Education Support</span>
+          <span class="pill">🚰 Clean Water</span>
+          <span class="pill">🧸 Child Protection</span>
         </div>
 
         <div class="ctaRow">
-          <a href="#donate" class="btn btn--primary">立即捐赠</a>
-          <button class="btn btn--ghost" id="btnScrollEncourage">捐赠后写鼓励</button>
+          <a href="#donate" class="btn btn--primary">Donate Now</a>
+          <button class="btn btn--ghost" id="btnScrollEncourage">
+            Write an encouragement after donating
+          </button>
         </div>
 
         <p class="fineprint">
-          本页面为学习/展示用途示例。真实捐赠请使用 UNICEF 官方渠道。
+          This page is created for learning and demonstration purposes only.
+          Please make real donations through official UNICEF channels.
         </p>
       </div>
 
       <div class="hero__right">
         <div class="heroCard">
-          <div class="heroCard__title">你的一个行动</div>
+          <div class="heroCard__title">One action from you</div>
           <div class="heroCard__big">=</div>
-          <div class="heroCard__desc">一个孩子更好的未来</div>
+          <div class="heroCard__desc">A better future for a child</div>
 
           <div class="heroCard__bar"></div>
 
           <ul class="heroCard__list">
-            <li>支持紧急救援行动</li>
-            <li>帮助儿童重返校园</li>
-            <li>改善健康与营养状况</li>
+            <li>Support emergency relief efforts</li>
+            <li>Help children return to school</li>
+            <li>Improve health and nutrition</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- 捐赠区域 -->
+    <!-- DONATION SECTION -->
     <section class="panel" id="donate">
       <div class="panel__header">
-        <h2>捐赠支持</h2>
+        <h2>Donation Support</h2>
         <p class="muted">
-          一次扫码，一份希望。完成捐赠后，你可以选择一句话鼓励孩子。
+          One click, one hope. After donating, you can choose a message to encourage a child.
         </p>
       </div>
 
       <div class="grid2">
-        <!-- 左：支付 -->
+        <!-- Left: payment -->
         <div class="card">
-          <h3>支付信息（示例）</h3>
+          <h3>Donation Information </h3>
           <p class="muted">
-            以下内容为演示占位，请替换为 UNICEF 官方捐赠链接或二维码。
+           
           </p>
 
           <div class="payBox">
-          
-
             <div class="payInfo">
               <div class="kv">
-                <div class="kv__k">官方链接</div>
+                <div class="kv__k">Official Link</div>
                 <div class="kv__v mono">
                   <a id="donationLink" href="https://help.unicef.org/" target="_blank" rel="noopener">
-  https://help.unicef.org/
-</a>
-
+                    https://help.unicef.org/
+                  </a>
                 </div>
               </div>
 
               <div class="kv">
-                <div class="kv__k">捐赠说明</div>
-                <div class="kv__v">UNICEF Donation（示例）</div>
+                <div class="kv__k">Description</div>
+                <div class="kv__v">UNICEF Donation (Example)</div>
               </div>
 
               <div class="btnRow">
                 <button class="btn btn--primary" id="btnDonated">
-                  我已完成捐赠
+                  I Have Donated
                 </button>
                 <button class="btn btn--ghost" id="btnCopyInfo">
-                  复制捐赠链接
+                  Copy Donation Link
                 </button>
               </div>
 
-              <!-- 弹出提示（支付信息下方） -->
+              <!-- Toast message -->
               <div class="toastArea">
                 <div class="toast" id="toast">
                   <div class="toast__dot"></div>
-                  <div class="toast__text" id="toastText">已完成</div>
+                  <div class="toast__text" id="toastText">Donation confirmed</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 右：意义 -->
+        <!-- Right: impact -->
         <div class="card">
-          <h3>你的捐赠将帮助</h3>
+          <h3>Your donation helps to</h3>
           <ul class="bullets">
-            <li>为儿童提供基本医疗与疫苗</li>
-            <li>在危机地区提供紧急援助</li>
-            <li>支持教育与心理健康项目</li>
-            <li>保护儿童免受暴力与剥削</li>
+            <li>Provide essential healthcare and vaccines</li>
+            <li>Deliver emergency aid in crisis regions</li>
+            <li>Support education and mental health programs</li>
+            <li>Protect children from violence and exploitation</li>
           </ul>
 
           <div class="quoteBox">
-            <p class="quote">“你的善意，可能是孩子人生中的一道光。”</p>
-            <p class="quote">“每一份帮助，都值得被记住。”</p>
-            <p class="quote">“让世界对孩子更温柔一点。”</p>
+            <p class="quote">“Your kindness may become a light in a child’s life.”</p>
+            <p class="quote">“Every act of help matters.”</p>
+            <p class="quote">“Make the world a gentler place for children.”</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 鼓励语选择 -->
+    <!-- ENCOURAGEMENT -->
     <section class="panel" id="message">
       <div class="panel__header">
-        <h2>写一句鼓励孩子的话</h2>
+        <h2>Write a Message of Encouragement</h2>
         <p class="muted">
-          完成捐赠后，选择一句鼓励语，系统会在主页面短暂弹出显示。
+          After donating, choose a message to encourage a child.
         </p>
       </div>
 
@@ -172,48 +172,48 @@
         <div class="stepper">
           <div class="step step--active" id="step1">
             <div class="step__num">1</div>
-            <div>确认捐赠</div>
+            <div>Confirm Donation</div>
           </div>
           <div class="step" id="step2">
             <div class="step__num">2</div>
-            <div>选择鼓励语</div>
+            <div>Select a Message</div>
           </div>
           <div class="step" id="step3">
             <div class="step__num">3</div>
-            <div>页面提示</div>
+            <div>Page Notification</div>
           </div>
         </div>
 
-        <!-- 未解锁 -->
+        <!-- Locked -->
         <div class="gate" id="gateLocked">
           <div class="gate__icon">🔒</div>
-          <div class="gate__title">请先完成捐赠</div>
+          <div class="gate__title">Please complete the donation first</div>
           <div class="gate__desc">
-            返回上方点击「我已完成捐赠」后即可解锁
+            Click “I Have Donated” above to unlock this section
           </div>
-          <a href="#donate" class="btn btn--ghost">返回捐赠区</a>
+          <a href="#donate" class="btn btn--ghost">Back to donation section</a>
         </div>
 
-        <!-- 选择区 -->
+        <!-- Picker -->
         <div class="picker" id="picker" hidden>
-          <p class="muted">请选择一句鼓励的话：</p>
+          <p class="muted">Please choose a message:</p>
 
           <div class="messageGrid" id="messageGrid"></div>
 
           <div class="btnRow">
             <button class="btn btn--primary" id="btnConfirmMessage" disabled>
-              确认发送
+              Confirm Message
             </button>
             <button class="btn btn--ghost" id="btnRandomMessage">
-              随机一句
+              Random Message
             </button>
             <button class="btn btn--ghost" id="btnReset">
-              重置流程
+              Reset Process
             </button>
           </div>
 
           <div class="selectedBox" id="selectedBox" hidden>
-            <div class="selectedBox__title">你选择的是：</div>
+            <div class="selectedBox__title">You selected:</div>
             <div class="selectedBox__text" id="selectedText"></div>
           </div>
         </div>
@@ -221,12 +221,12 @@
     </section>
 
     <footer class="footer">
-      <p>© UNICEF 示例页面 · 学习与展示用途</p>
+      <p>© UNICEF Sample Page · For learning and presentation purposes</p>
     </footer>
 
   </main>
 
-  <!-- 逻辑 -->
+  <!-- Script -->
   <script src="app.js"></script>
 </body>
 </html>
