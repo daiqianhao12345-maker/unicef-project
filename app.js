@@ -131,7 +131,6 @@ function randomPick() {
 }
 
 function goToDonateAndToast() {
-  // Jump back to the donation section and show a toast under the donation area
   window.location.hash = "#donate";
   setStepActive(3);
 
@@ -141,7 +140,6 @@ function goToDonateAndToast() {
 
   showToast(msg);
 
-  // After a moment, return the step indicator to the selectable state
   window.setTimeout(() => {
     if (state.hasDonated) setStepActive(2);
   }, 2600);
